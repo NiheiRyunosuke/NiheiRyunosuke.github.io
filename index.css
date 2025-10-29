@@ -60,46 +60,83 @@ ul{ margin:0 0 6px 1.2rem }
 #career h2{font-size:1.6rem;margin:20px 0 12px}
 
 /* 調整ノブ：左カラム幅とガター */
-/* ===== 強制上書きパッチ（重なり完全停止） ===== */
-.timeline{
-  --tl-left: 230px !important;   /* 左カラムを広めに */
-  --tl-gap: 28px !important;
-  position: relative !important;
+.timeline {
+    position: relative; /* ドットの位置決めの基準 */
+    list-style: none; /* リストのデフォルトスタイルを削除 */
+    padding: 0; /* デフォルトのパディングを削除 */
+    margin-top: 20px; /* 上部の余白を追加 */
 }
 
-.timeline > li{
-  display: grid !important;
-  grid-template-columns: var(--tl-left) 1fr !important;
-  column-gap: var(--tl-gap) !important;
-  align-items: flex-start !important;
-  padding: 22px 0 !important;
+.timeline > li {
+    position: relative; /* ドットとバッジの位置決めの基準 */
+    padding-left: 150px; /* 左側のテキスト（日付など）のためのスペース */
+    margin-bottom: 25px; /* 各項目間の間隔 */
 }
 
-.timeline::before{
-  content: "" !important;
-  position: absolute !important;
-  left: var(--tl-left) !important;
-  top: 0 !important; bottom: 0 !important;
-  width: 3px !important; background: var(--line) !important;
+/* タイムラインの垂直線 */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 100px; /* 垂直線の位置 */
+    top: 0;
+    bottom: 0;
+    width: 2px; /* 線の太さ */
+    background-color: var(--line); /* 線の色 */
 }
 
-.timeline > li .badge{
-  position: static !important;      /* ← 絶対配置を完全禁止 */
-  justify-self: end !important;     /* 左カラムの右端へ */
-  white-space: nowrap !important;   /* 折り返し防止 */
-  display: inline-block !important;
+/* 日付バッジのスタイル */
+.timeline > li .badge {
+    position: absolute;
+    left: 0; /* 左寄せ */
+    top: 0;
+    width: 90px; /* 日付の表示幅 */
+    text-align: right; /* 日付を右寄せ */
+    color: var(--muted);
+    font-size: 0.9em;
+    padding-right: 10px; /* 垂直線との間隔 */
 }
 
-.timeline > li .dot{
-  position: absolute !important;
-  left: var(--tl-left) !important;
-  top: 30px !important;
-  transform: translateX(-50%) !important;
-  width: 16px !important; height: 16px !important; border-radius: 50% !important;
+/* ドットのスタイル */
+.timeline > li .dot {
+    position: absolute;
+    left: 95px; /* 垂直線上のドットの位置 */
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--link); /* ドットの色 */
+    border-radius: 50%;
+    z-index: 1; /* 垂直線の上に表示 */
+    border: 2px solid var(--bg); /* 背景色と同じボーダーで垂直線との結合感を出す */
 }
 
-@media (max-width: 640px){
-  .timeline{ --tl-left: 180px !important; --tl-gap: 16px !important; }
-  .timeline > li{ padding: 18px 0 !important; }
-  .timeline > li .dot{ top: 26px !important; }
+/* エントリーコンテンツのスタイル */
+.timeline > li .entry {
+    margin-left: 20px; /* ドットからの間隔 */
+}
+
+.timeline > li .entry h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.timeline > li .entry p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 640px) {
+    .timeline > li {
+        padding-left: 120px; /* 小さい画面での調整 */
+    }
+    .timeline::before {
+        left: 80px;
+    }
+    .timeline > li .dot {
+        left: 75px;
+    }
+    .timeline > li .badge {
+        width: 70px;
+    }
 }
