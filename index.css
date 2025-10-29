@@ -31,7 +31,12 @@ a:hover{text-decoration:underline}
 .nav{ display:flex; flex-direction:column; gap:8px }
 .nav a{ padding:4px 0 }
 
-.links{ margin-top:auto; display:flex; flex-wrap:wrap; gap:10px; }
+.links{ 
+  margin-top:auto; 
+  display:flex; 
+  flex-direction: column; /* 縦に並べるよう指定 */
+  gap: 10px; /* 項目間の縦の隙間になります */
+}
 .links a{font-size:.95rem}
 
 /* Main */
