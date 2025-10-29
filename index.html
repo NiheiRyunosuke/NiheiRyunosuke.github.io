@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ryunosuke Nihei | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Statistical spatio-temporal acoustic scene analysis / Distributed microphone arrays" />
+  <meta property="og:title" content="Ryunosuke Nihei | Portfolio" />
+  <meta property="og:description" content="Acoustics, signal processing, and audio-ML projects" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Ryunosuke Nihei</h1>
+    <p>Acoustics / Signal Processing / Audio-ML</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#pubs">Publications</a>
+      <a href="#talks">Talks</a>
+      <a href="#contact">Contact</a>
+      <a href="assets/CV_Nihei.pdf">CV</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <h2>About</h2>
+      <p>京都大学大学院工学研究科 M1。分散マイクアレイを用いた
+      <strong>移動音源の同時分離・追跡</strong>に取り組んでいます。
+      生成モデル（MNMF/ILRMA等）と時空間モデリング、確率的最適化を主に扱います。</p>
+    </section>
+
+    <section id="research" class="section">
+      <h2>Research Interests</h2>
+      <ul class="pill-list">
+        <li>Distributed Microphone Arrays</li>
+        <li>Spatio-Temporal SCM Modeling</li>
+        <li>Joint Separation & Tracking</li>
+        <li>Probabilistic Generative Models</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Selected Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Joint Separation & Tracking</h3>
+          <p>統一確率モデルに基づく移動音源の同時分離・追跡。</p>
+          <p><a href="https://github.com/<your-id>/<repo>" target="_blank" rel="noopener">GitHub</a></p>
+        </article>
+        <article class="card">
+          <h3>PyRoomAcoustics Pipeline</h3>
+          <p>移動RIR生成、SCM算出、評価自動化の一貫パイプライン。</p>
+          <p><a href="https://github.com/<your-id>/<repo2>" target="_blank" rel="noopener">GitHub</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pubs" class="section">
+      <h2>Publications / Preprints</h2>
+      <ul class="pub-list">
+        <li><strong>Nihei, R.</strong>, et al., “Joint Separation and Tracking …”, APSIPA ASC 2025 (under review).</li>
+        <!-- 他の論文をここに -->
+      </ul>
+    </section>
+
+    <section id="talks" class="section">
+      <h2>Talks</h2>
+      <ul>
+        <li>3MT: “Joint Separation and Tracking …”, 2025.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <ul class="links">
+        <li><a href="mailto:nihei.ryunosuke.38i@st.kyoto-u.ac.jp">Email</a></li>
+        <li><a href="https://github.com/<your-id>" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a></li>
+        <li><a href="https://x.com/" target="_blank" rel="noopener">X</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="y"></span> Ryunosuke Nihei</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
