@@ -49,8 +49,19 @@ ul{ margin:0 0 6px 1.2rem }
 .timeline dd{ margin:0 }
 
 .pubs{ list-style:none; padding:0; }
-.pubs li{ padding:10px 0; border-bottom:1px dashed var(--line) }
-.pubs .year{ display:inline-block; width:60px; color:var(--muted) }
+.pubs li {
+    position: relative; /* 年号を絶対配置するための基準点にします */
+    padding: 10px 0 10px 76px; /* 年号(60px) + 隙間(16px) の分だけ左にパディングを追加 */
+    border-bottom: 1px dashed var(--line);
+}
+.pubs .year {
+    position: absolute; /* 通常のレイアウト（ドキュメントフロー）から切り離します */
+    left: 0; /* liの左端を基準に 0px の位置に配置 */
+    top: 10px; /* liのpadding-topと値を合わせます */
+    width: 60px; /* 幅は維持 */
+    color: var(--muted);
+    /* display: inline-block; は不要になるので削除します */
+}
 .links-inline a{ margin-left:10px; }
 
 .footer{ margin:36px 0 0; padding-top:12px; border-top:1px solid var(--line); color:var(--muted); font-size:.95rem }
