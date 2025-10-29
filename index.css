@@ -28,12 +28,12 @@ a:hover{text-decoration:underline}
 }
 
 .identity .avatar { 
-    width: 120px; /* 88pxから120pxに拡大 */
-    height: 120px; /* 88pxから120pxに拡大 */
+    width: 150px; /* 120pxから150pxに拡大 */
+    height: 150px; /* 120pxから150pxに拡大 */
     border-radius: 50%; 
     object-fit: cover; 
     display: block; 
-    margin: 0 auto 15px; /* 上下左右のマージンを調整し、中央揃えに */
+    margin: 0 auto 20px; /* 下マージンを15pxから20pxに調整 */
     border: 1px solid var(--line); 
 }
 
