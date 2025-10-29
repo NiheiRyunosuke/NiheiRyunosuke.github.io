@@ -75,6 +75,11 @@ ul{ margin:0 0 6px 1.2rem }
     color: var(--muted);
     /* display: inline-block; は不要になるので削除します */
 }
+.links-inline {
+  float: none; /* 右寄せ(float: right)を解除 */
+  position: static; /* 絶対配置(position: absolute)を解除 */
+  display: inline; /* 念のためインライン要素であることを明記 */
+}
 .links-inline a{ margin-left:10px; }
 
 .footer{ margin:36px 0 0; padding-top:12px; border-top:1px solid var(--line); color:var(--muted); font-size:.95rem }
