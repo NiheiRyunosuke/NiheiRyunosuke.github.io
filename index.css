@@ -60,57 +60,47 @@ ul{ margin:0 0 6px 1.2rem }
 #career h2{font-size:1.6rem;margin:20px 0 12px}
 
 /* 調整ノブ：左カラム幅とガター */
+/* ===== 強制上書きパッチ（重なり完全停止） ===== */
 .timeline{
-  --tl-left: 210px;   /* ← ここを 200–240px でお好み調整 */
-  --tl-gap: 28px;     /* 右カラムとのすき間 */
-  list-style:none; margin:0; padding:0; position:relative;
-}
-.timeline::before{
-  content:""; position:absolute; left:var(--tl-left); top:0; bottom:0;
-  width:3px; background:var(--line);
+  --tl-left: 230px !important;   /* 左カラムを広めに */
+  --tl-gap: 28px !important;
+  position: relative !important;
 }
 
 .timeline > li{
-  display:grid;
-  grid-template-columns: var(--tl-left) 1fr;  /* 左=年月 / 右=本文 */
-  column-gap: var(--tl-gap);
-  align-items:flex-start;
-  position:relative;
-  padding:22px 0;
-  border-radius:8px;
-}
-.timeline > li:nth-child(even){ background:var(--row); }
-
-/* ドット（縦線の上） */
-.timeline .dot{
-  position:absolute; left:var(--tl-left); top:30px;
-  width:16px; height:16px; border-radius:50%;
-  background:var(--edu); box-shadow:0 0 0 3px var(--bg) inset;
-  transform:translateX(-50%);
-}
-.timeline > li.intern   .dot{ background:var(--intern); }
-.timeline > li.parttime .dot{ background:var(--part); }
-
-/* 年月バッジ：通常フロー＋折り返し禁止で横幅一定 */
-.timeline .badge{
-  justify-self: end; align-self:start;
-  display:inline-block; padding:6px 12px; border-radius:16px;
-  background:#e6f7fb; color:#0b6c8b; font-weight:700; font-size:.9rem;
-  border:1px solid rgba(0,0,0,.06);
-  white-space: nowrap;        /* ← 折り返させない */
-  position:static;            /* ← absolute禁止（重なりの元凶） */
-}
-@media (prefers-color-scheme: dark){
-  .timeline .badge{ background:#0e2a34; color:#c0eaff; border-color:#11313b; }
+  display: grid !important;
+  grid-template-columns: var(--tl-left) 1fr !important;
+  column-gap: var(--tl-gap) !important;
+  align-items: flex-start !important;
+  padding: 22px 0 !important;
 }
 
-/* 本文 */
-.timeline .entry h3{ margin:0 0 4px; font-size:1.05rem; }
-.timeline .entry p{  margin:0; color:var(--muted); }
+.timeline::before{
+  content: "" !important;
+  position: absolute !important;
+  left: var(--tl-left) !important;
+  top: 0 !important; bottom: 0 !important;
+  width: 3px !important; background: var(--line) !important;
+}
 
-/* モバイル：少し詰める */
+.timeline > li .badge{
+  position: static !important;      /* ← 絶対配置を完全禁止 */
+  justify-self: end !important;     /* 左カラムの右端へ */
+  white-space: nowrap !important;   /* 折り返し防止 */
+  display: inline-block !important;
+}
+
+.timeline > li .dot{
+  position: absolute !important;
+  left: var(--tl-left) !important;
+  top: 30px !important;
+  transform: translateX(-50%) !important;
+  width: 16px !important; height: 16px !important; border-radius: 50% !important;
+}
+
 @media (max-width: 640px){
-  .timeline{ --tl-left: 168px; --tl-gap: 16px; }
-  .timeline > li{ padding:18px 0; }
-  .timeline .dot{ top:26px; }
+  .timeline{ --tl-left: 180px !important; --tl-gap: 16px !important; }
+  .timeline > li{ padding: 18px 0 !important; }
+  .timeline > li .dot{ top: 26px !important; }
 }
+
