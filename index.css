@@ -23,9 +23,24 @@ a:hover{text-decoration:underline}
 }
 
 /* Sidebar */
-.identity{ text-align:left }
-.identity .avatar{ width:88px; height:88px; border-radius:50%; object-fit:cover; display:block; margin-bottom:10px; border:1px solid var(--line); }
-.identity h1{ font-size:1.35rem; margin:0 0 6px }
+.identity { 
+    text-align: center; /* 左揃えから中央揃えに変更 */
+}
+
+.identity .avatar { 
+    width: 120px; /* 88pxから120pxに拡大 */
+    height: 120px; /* 88pxから120pxに拡大 */
+    border-radius: 50%; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto 15px; /* 上下左右のマージンを調整し、中央揃えに */
+    border: 1px solid var(--line); 
+}
+
+.identity h1 { 
+    font-size: 1.8rem; /* 1.35remから1.8remに拡大 */
+    margin: 0 0 10px; /* 下部のマージンを調整 */
+}
 .identity p{ margin:0; color:var(--muted) }
 
 .nav{ display:flex; flex-direction:column; gap:8px }
