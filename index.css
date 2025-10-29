@@ -55,50 +55,50 @@ ul{ margin:0 0 6px 1.2rem }
 
 .footer{ margin:36px 0 0; padding-top:12px; border-top:1px solid var(--line); color:var(--muted); font-size:.95rem }
 
-/* ==== Timeline (grid版・重なり解消) ==== */
+/* ==== Timeline (grid版・衝突しない調整可能パッチ) ==== */
 #career{max-width: 920px; margin: 0 auto; padding: 0 18px;}
 #career h2{font-size:1.6rem;margin:20px 0 12px}
 
-/* 全体の縦線 */
+/* 調整ノブ：左カラム幅とガター */
 .timeline{
+  --tl-left: 210px;   /* ← ここを 200–240px でお好み調整 */
+  --tl-gap: 28px;     /* 右カラムとのすき間 */
   list-style:none; margin:0; padding:0; position:relative;
 }
 .timeline::before{
-  content:""; position:absolute; left:160px; top:0; bottom:0;
+  content:""; position:absolute; left:var(--tl-left); top:0; bottom:0;
   width:3px; background:var(--line);
 }
 
-/* 各アイテム：左=日付、右=本文 の2カラム */
 .timeline > li{
   display:grid;
-  grid-template-columns: 160px 1fr;   /* ←左カラム幅を固定 */
-  column-gap: 22px;
+  grid-template-columns: var(--tl-left) 1fr;  /* 左=年月 / 右=本文 */
+  column-gap: var(--tl-gap);
   align-items:flex-start;
   position:relative;
-  padding:20px 0;
+  padding:22px 0;
   border-radius:8px;
 }
 .timeline > li:nth-child(even){ background:var(--row); }
 
-/* ドット（縦線の上に重ねる） */
+/* ドット（縦線の上） */
 .timeline .dot{
-  position:absolute;
-  left:160px; top:28px;               /* ←行の先頭あたりに配置 */
+  position:absolute; left:var(--tl-left); top:30px;
   width:16px; height:16px; border-radius:50%;
   background:var(--edu); box-shadow:0 0 0 3px var(--bg) inset;
-  transform:translateX(-50%);         /* 線の中心に合わせる */
+  transform:translateX(-50%);
 }
 .timeline > li.intern   .dot{ background:var(--intern); }
 .timeline > li.parttime .dot{ background:var(--part); }
 
-/* 日付バッジ：通常フローにする（重なりの元を断つ） */
+/* 年月バッジ：通常フロー＋折り返し禁止で横幅一定 */
 .timeline .badge{
-  justify-self: end;                   /* 左カラムの右端に寄せる */
-  align-self: start;
+  justify-self: end; align-self:start;
   display:inline-block; padding:6px 12px; border-radius:16px;
   background:#e6f7fb; color:#0b6c8b; font-weight:700; font-size:.9rem;
   border:1px solid rgba(0,0,0,.06);
-  position:static;                     /* ★ absolute をやめる */
+  white-space: nowrap;        /* ← 折り返させない */
+  position:static;            /* ← absolute禁止（重なりの元凶） */
 }
 @media (prefers-color-scheme: dark){
   .timeline .badge{ background:#0e2a34; color:#c0eaff; border-color:#11313b; }
@@ -108,9 +108,9 @@ ul{ margin:0 0 6px 1.2rem }
 .timeline .entry h3{ margin:0 0 4px; font-size:1.05rem; }
 .timeline .entry p{  margin:0; color:var(--muted); }
 
-/* モバイル幅：カラム幅を縮める */
+/* モバイル：少し詰める */
 @media (max-width: 640px){
-  .timeline::before{ left:128px; }
-  .timeline > li{ grid-template-columns:128px 1fr; column-gap:16px; padding:18px 0; }
-  .timeline .dot{ left:128px; top:26px; }
+  .timeline{ --tl-left: 168px; --tl-gap: 16px; }
+  .timeline > li{ padding:18px 0; }
+  .timeline .dot{ top:26px; }
 }
