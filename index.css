@@ -60,29 +60,37 @@ ul{ margin:0 0 6px 1.2rem }
 
 /* タイムライン本体 */
 .timeline{
-  list-style:none; margin:0; padding:0 0 0 110px; position:relative;
+  list-style:none; margin:0;
+  /* 左の余白を広くしてバッジ衝突を防ぐ */
+  padding:0 0 0 150px; 
+  position:relative;
 }
 .timeline::before{
-  content:""; position:absolute; left:36px; top:0; bottom:0; width:3px; background:var(--line);
+  content:"";
+  /* 縦線の位置も右へ */
+  left:56px; top:0; bottom:0; width:3px; background:var(--line);
+  position:absolute;
 }
-
-/* 各行 */
 .timeline > li{
-  position:relative; padding:18px 12px 18px 24px; border-radius:8px;
+  position:relative;
+  /* 行の高さを少し増やす */
+  padding:22px 12px 22px 24px;
+  border-radius:8px;
 }
-.timeline > li:nth-child(even){ background:var(--row); }
-
-/* 丸ノード */
 .timeline .dot{
-  position:absolute; left:29px; top:26px; width:16px; height:16px; border-radius:50%;
+  position:absolute;
+  /* ドットも縦線に合わせて右へ */
+  left:49px; top:28px;
+  width:16px; height:16px; border-radius:50%;
   background:var(--edu); box-shadow:0 0 0 3px var(--bg) inset;
 }
 .timeline > li.intern .dot{ background:var(--intern); }
 .timeline > li.parttime .dot{ background:var(--part); }
 
-/* 日付バッジ */
 .timeline .badge{
-  position:absolute; left:-2px; top:16px;
+  position:absolute;
+  /* バッジは大胆に右寄せ：文字数が増えても本文に被りにくい */
+  left:8px; top:16px;
   display:inline-block; padding:6px 12px; border-radius:16px;
   background:#e6f7fb; color:#0b6c8b; font-weight:700; font-size:.9rem;
   border:1px solid rgba(0,0,0,.06);
@@ -91,19 +99,10 @@ ul{ margin:0 0 6px 1.2rem }
   .timeline .badge{ background:#0e2a34; color:#c0eaff; border-color:#11313b; }
 }
 
-/* 右側の本文 */
-.timeline .entry h3{ margin:0 0 4px; font-size:1.05rem; }
-.timeline .entry p{ margin:0; color:var(--muted); }
-
-/* カテゴリ別ボーダー（控えめ） */
-.timeline > li.edu    { --badge:var(--edu); }
-.timeline > li.intern { --badge:var(--intern); }
-.timeline > li.parttime{--badge:var(--part);}
-
-/* スマホ最適化 */
+/* モバイル幅では少し詰める */
 @media (max-width:640px){
-  .timeline{ padding-left:92px; }
-  .timeline::before{ left:28px; }
-  .timeline .dot{ left:21px; }
-  .timeline .badge{ left:-8px; }
+  .timeline{ padding-left:120px; }
+  .timeline::before{ left:44px; }
+  .timeline .dot{ left:37px; }
+  .timeline .badge{ left:6px; }
 }
