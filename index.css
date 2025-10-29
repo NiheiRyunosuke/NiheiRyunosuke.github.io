@@ -45,7 +45,15 @@ p{ margin:0 0 12px }
 ul{ margin:0 0 6px 1.2rem }
 .items li{ margin-bottom:6px }
 
-.tags{ list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 0 }
+.tags{ 
+  list-style:none; 
+  padding:0; 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:8px; 
+  margin:8px 0 0;
+  justify-content: center; /* ← これを追加 */
+}
 .tags li{ border:1px solid var(--line); border-radius:999px; padding:3px 10px; font-size:.9rem }
 
 .timeline{ margin:0; }
