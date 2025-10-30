@@ -53,6 +53,7 @@ a:hover{text-decoration:underline}
   padding: 8px 0; /* 上下に8pxの余白を作り、均等な間隔にします */
   margin: 0; /* 余計なマージンをリセット */
 }
+
 .links{ 
   display:flex; 
   flex-direction: column; /* 縦に並べるよう指定 */
