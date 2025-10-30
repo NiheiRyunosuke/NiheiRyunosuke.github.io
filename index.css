@@ -44,15 +44,12 @@ a:hover{text-decoration:underline}
 .identity p{ margin:0; color:var(--muted) }
 
 .nav { 
-  display: flex; 
-  flex-direction: column; 
-  /* gap: 8px; ← この行を削除、またはコメントアウト */
+  display: flex; 
+  flex-direction: column; 
 }
-
-/* .nav a の padding で均等な間隔を作ります */
 .nav a { 
-  padding: 8px 0; /* 上下に8pxずつ余白を設定 (合計16pxの間隔) */
-  margin: 0; /* 予期しない margin をリセット */
+  padding: 8px 0; /* 上下に8pxずつ余白を設定 (これで均等な間隔になります) */
+  margin: 0; /* 念のため、余計なマージンをリセット */
 }
 
 .links{ 
