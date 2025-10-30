@@ -24,38 +24,35 @@ a:hover{text-decoration:underline}
 
 /* Sidebar */
 .identity { 
-    text-align: center;
+    text-align: center; /* 左揃えから中央揃えに変更 */
 }
 
 .identity .avatar { 
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; 
-    object-fit: cover; 
-    display: block; 
-    margin: 0 auto 20px;
-    border: 1px solid var(--line); 
+    width: 150px; /* 120pxから150pxに拡大 */
+    height: 150px; /* 120pxから150pxに拡大 */
+    border-radius: 50%; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto 20px; /* 下マージンを15pxから20pxに調整 */
+    border: 1px solid var(--line); 
 }
 
 .identity h1 { 
-    font-size: 1.8rem;
-    margin: 0 0 10px;
+    font-size: 1.8rem; /* 1.35remから1.8remに拡大 */
+    margin: 0 0 10px; /* 下部のマージンを調整 */
 }
 .identity p{ margin:0; color:var(--muted) }
 
-/* ▼▼▼ ナビゲーションの定義（ここが重要） ▼▼▼ */
 .nav {
   display: flex;
-  flex-direction: column; /* 縦並びを強制 */
+  flex-direction: column; /* ★ これが縦並びを指定します */
+  /* gap: 8px; は削除 (paddingで間隔を制御するため) */
 }
 
 .nav a {
-  display: block; /* リンクをブロック要素として扱う */
-  padding: 8px 0; /* 上下に8pxの余白を設け、均等な間隔を作る */
-  margin: 0; /* マージンをリセット */
-  line-height: 1.5; /* 行の高さを揃える */
+  padding: 8px 0; /* 上下に8pxの余白を作り、均等な間隔にします */
+  margin: 0; /* 余計なマージンをリセット */
 }
-/* ▲▲▲ ここまで ▲▲▲ */
 
 .links{ 
   display:flex; 
