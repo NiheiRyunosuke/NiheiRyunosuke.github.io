@@ -76,24 +76,25 @@ ul{ margin:0 0 6px 1.2rem }
 .timeline dd{ margin:0 }
 
 .pubs {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .pubs li {
-    position: relative; /* 年号を配置する基準にします */
-    padding: 10px 0 10px 76px; /* ★最重要：本文エリア(76px)を確保 */
-    border-bottom: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--line);
+  padding: 12px 0;
+  margin-bottom: 10px;
 }
 
+/* 年号をタイトルの上に表示 */
 .pubs .year {
-    position: absolute; /* 年号を本文レイアウトから切り離します */
-    left: 0; /* 親(li)の左端に配置 */
-    top: 10px; /* 親(li)の上端から10pxの位置に配置 */
-    width: 60px;
-    color: var(--muted);
+  display: block;          /* ブロック化して改行 */
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 4px;      /* タイトルとの間に少し余白 */
+  position: static;        /* 絶対配置を解除 */
 }
-
 .links-inline {
   float: none; /* 右寄せ(float: right)を解除 */
   position: static; /* 絶対配置(position: absolute)を解除 */
