@@ -95,6 +95,19 @@ ul{ margin:0 0 6px 1.2rem }
   margin-bottom: 4px;      /* タイトルとの間に少し余白 */
   position: static;        /* 絶対配置を解除 */
 }
+
+.pubs li strong {
+  display: block;          /* タイトル全体をブロックにして独立行に */
+  font-size: 1.05rem;      /* 少し大きめに（任意） */
+  font-weight: 600;        /* 太字 */
+  line-height: 1.6;        /* 行間を少し広げる */
+  text-indent: 0;          /* 行頭インデントを無しに */
+  margin: 2px 0 6px;       /* 上下の余白 */
+  word-break: keep-all;    /* 単語の途中での改行を防止 */
+  overflow-wrap: break-word; /* 英語が長すぎるときは安全に折り返す */
+}
+
+
 .links-inline {
   float: none; /* 右寄せ(float: right)を解除 */
   position: static; /* 絶対配置(position: absolute)を解除 */
