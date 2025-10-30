@@ -77,17 +77,18 @@ ul{ margin:0 0 6px 1.2rem }
 
 .pubs{ list-style:none; padding:0; }
 .pubs li {
-    padding: 15px 0; /* 項目ごとの上下の余白を調整 */
-    border-bottom: 1px dashed var(--line);
-    /* 以前の position: relative や padding-left は削除します */
+    position: relative; /* 年号を絶対配置するための基準点 */
+    padding: 10px 0 10px 76px; /* ★重要：本文エリア(76px)を確保 */
+    border-bottom: 1px dashed var(--line);
+}
+.pubs .year {
+    position: absolute; /* レイアウトから切り離す */
+    left: 0; /* 親liの左端に配置 */
+    top: 10px; /* 親liの上端から10pxの位置に配置 */
+    width: 60px; /* 年号の幅 */
+    color: var(--muted);
 }
 
-.pubs .year {
-    display: block; /* 年号を独立したブロック要素（行）にする */
-    color: var(--muted);
-    margin-bottom: 6px; /* 年号とタイトルの間の余白 */
-    /* 以前の position: absolute 関連の指定は削除します */
-}
 .links-inline {
   float: none; /* 右寄せ(float: right)を解除 */
   position: static; /* 絶対配置(position: absolute)を解除 */
