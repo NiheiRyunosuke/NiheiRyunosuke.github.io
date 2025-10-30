@@ -43,15 +43,14 @@ a:hover{text-decoration:underline}
 }
 .identity p{ margin:0; color:var(--muted) }
 
-.nav {
-  display: flex;
-  flex-direction: column; /* ★ これが縦並びを指定します */
-  /* gap: 8px; は削除 (paddingで間隔を制御するため) */
+.nav{
+  display:flex;
+  flex-direction:column;
 }
-
-.nav a {
-  padding: 8px 0; /* 上下に8pxの余白を作り、均等な間隔にします */
-  margin: 0; /* 余計なマージンをリセット */
+.nav a{
+  display:block;
+  padding:8px 0;
+  margin:0;
 }
 
 .links{ 
