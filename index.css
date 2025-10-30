@@ -75,17 +75,22 @@ ul{ margin:0 0 6px 1.2rem }
 .timeline dt{ color:var(--muted) }
 .timeline dd{ margin:0 }
 
-.pubs{ list-style:none; padding:0; }
+.pubs {
+    list-style: none;
+    padding: 0;
+}
+
 .pubs li {
-    position: relative; /* 年号を絶対配置するための基準点 */
-    padding: 10px 0 10px 76px; /* ★重要：本文エリア(76px)を確保 */
+    position: relative; /* 年号を配置する基準にします */
+    padding: 10px 0 10px 76px; /* ★最重要：本文エリア(76px)を確保 */
     border-bottom: 1px dashed var(--line);
 }
+
 .pubs .year {
-    position: absolute; /* レイアウトから切り離す */
-    left: 0; /* 親liの左端に配置 */
-    top: 10px; /* 親liの上端から10pxの位置に配置 */
-    width: 60px; /* 年号の幅 */
+    position: absolute; /* 年号を本文レイアウトから切り離します */
+    left: 0; /* 親(li)の左端に配置 */
+    top: 10px; /* 親(li)の上端から10pxの位置に配置 */
+    width: 60px;
     color: var(--muted);
 }
 
