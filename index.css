@@ -62,7 +62,14 @@ a:hover{text-decoration:underline}
 }
 .nav-list a:hover{ text-decoration: underline; }
 
-
+/* 修正箇所 11302005 */
+.links{ 
+  margin-top:auto; 
+  display:flex; 
+  flex-direction: column; /* 縦並びに変更 */
+  gap:10px; 
+}
+.links a{ font-size:.95rem; }
 
 /* Main */
 h2{ font-size:1.25rem; margin:30px 0 10px; border-bottom:1px solid var(--line); padding-bottom:6px; color:var(--accent) }
