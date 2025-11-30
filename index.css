@@ -62,19 +62,7 @@ a:hover{text-decoration:underline}
 }
 .nav-list a:hover{ text-decoration: underline; }
 
-/* Links (修正箇所) */
-.links {
-  margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;               /* 間隔を少し広げて見やすく */
-  justify-content: center; /* ★ここが重要：中央揃えにする */
-  width: 100%;             /* 幅いっぱいに広げる */
-}
-.links a {
-  font-size: .95rem;
-  display: inline-block;
-}
+
 
 /* Main */
 h2{ font-size:1.25rem; margin:30px 0 10px; border-bottom:1px solid var(--line); padding-bottom:6px; color:var(--accent) }
