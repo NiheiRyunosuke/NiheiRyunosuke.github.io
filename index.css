@@ -133,6 +133,18 @@ ul{ margin:0 0 6px 1.2rem }
   color: var(--link);
 }
 
+.project-slide {
+  margin: 15px 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f9f9f9;
+}
+.project-slide iframe {
+  border: none;
+  display: block;
+}
+
 .footer{ margin:36px 0 0; padding-top:12px; border-top:1px solid var(--line); color:var(--muted); font-size:.95rem }
 
 /* ==== Timeline (grid版・衝突しない調整可能パッチ) ==== */
