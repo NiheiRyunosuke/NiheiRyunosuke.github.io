@@ -124,6 +124,14 @@ ul{ margin:0 0 6px 1.2rem }
 }
 .links-inline a{ margin-left:10px; }
 .pubs li small{ color:var(--muted); }
+.pubs .award-image{
+  display:block;
+  width:100%;
+  max-width:720px;
+  height:auto;
+  margin:12px 0 0 44px;
+  border:1px solid var(--line);
+}
 
 .paper-links{
   margin-top: 4px;
@@ -249,6 +257,10 @@ ul{ margin:0 0 6px 1.2rem }
 @media (max-width: 640px) {
   .pubs .pub-authors,
   .pubs .pub-venue {
+    margin-left: 0;
+  }
+
+  .pubs .award-image {
     margin-left: 0;
   }
 }
